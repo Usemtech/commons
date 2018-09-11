@@ -1,7 +1,7 @@
 package commons_test
 
 import (
-	"Usemtech/commons.git"
+	"Usemtech/commons"
 	"testing"
 
 	"github.com/stretchr/testify/require"

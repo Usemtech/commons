@@ -1,4 +1,4 @@
-module Usemtech/commons.git
+module Usemtech/commons
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect

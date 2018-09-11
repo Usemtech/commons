@@ -1,7 +1,7 @@
 package commons_test
 
 import (
-	"Usemtech/commons.git"
+	"Usemtech/commons"
 	"fmt"
 	"testing"
 
