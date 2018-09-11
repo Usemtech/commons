@@ -3,12 +3,12 @@ plugins {
 }
 
 golang {
-    packagePath = 'Usemtech/commons' // go import path of project to be built, NOT local file system path!
+    packagePath = 'github.com/Usemtech/commons' // go import path of project to be built, NOT local file system path!
 }
 
 task golint(type: com.github.blindpirate.gogradle.Go) {
     dependsOn vendor // make this task depend on vendor task to guarantee all dependency packages are installed into vendor 
-    run 'golint Usemtech/commons' // specify the command in task
+    run 'golint github.com/Usemtech/commons' // specify the command in task
 }
 
 check.dependsOn golint

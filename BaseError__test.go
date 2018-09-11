@@ -1,9 +1,10 @@
 package commons_test
 
 import (
-	"Usemtech/commons"
 	"fmt"
 	"testing"
+
+	"github.com/Usemtech/commons"
 
 	"github.com/stretchr/testify/require"
 )
