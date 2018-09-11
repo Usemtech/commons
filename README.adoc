@@ -1,0 +1,72 @@
+= Project Documentaion
+Younes Ouadi <yo@usem.tech>
+:icons: font
+:sectnums:
+
+A tiny webapp that converts a string to a QR Code. It uses in the back Google's chart API.
+
+== Developer's Guide
+
+=== Workflow for Task
+
+==== Prerequisites
+
+* Install Task
+
+==== Build Project
+
+ $ task build
+
+==== Test Project
+
+ $ task test
+
+==== Install Project
+
+ $ task install
+
+=== Workflow for Gradle
+
+==== Prerequisites
+
+* gradle
+
+==== create the wrapper
+
+ $ gradle wrapper
+
+==== migrate from other dependency management tools (ex. dep/glide/glock/godep/gom/gopm/govendor/gvt/gbvendor/trash/gpm)
+
+ $ ./gradlew init
+
+==== install dependencies
+
+ $ ./gradlew vendor
+
+==== test project
+
+ $ ./gradlew test
+
+==== check project
+
+ $ ./gradlew check
+
+[NOTE]
+====
+* `test` is exexuted automatically before `check`.
+====
+
+==== build project
+
+ $ ./gradlew build
+
+[NOTE]
+====
+* dependencies will be installed automatically
+* `build.dependsOn check` has been added to `build.gradle` to ensure running check before building the project.
+====
+
+==== lock dependencies
+
+ $ ./gradlew lock
+

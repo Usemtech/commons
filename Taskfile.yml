@@ -1,0 +1,50 @@
+version: '2'
+
+tasks:
+  migrate:
+    cmds:
+      # Fix finds Go programs that use old APIs and rewrites them to use newer
+      # ones. After you update to a new Go release, fix helps make the necessary
+      # changes to your programs.
+      - go fix .
+
+  init:
+    cmds:
+      - go mod init
+    status:
+      - test -f go.mod
+
+  dep:
+    cmds:
+      - go mod tidy
+      - go mod vendor
+
+  qa:
+    cmds:
+      - task init
+      - task dep
+      # Gofmt formats Go programs. It uses tabs for indentation and blanks
+      # for alignment. Alignment assumes that an editor is using
+      # a fixed-width font.
+      - gofmt -l .
+      # Vet examines Go source code and reports suspicious constructs,
+      # such as Printf calls whose arguments do not align with the format
+      # string. Vet uses heuristics that do not guarantee all reports are
+      # genuine problems, but it can find errors not caught by the compilers.
+      - go vet
+
+  build:
+    cmds:
+      - task qa
+      - go build
+
+  test:
+    cmds:
+      - task qa
+      - go test
+
+  install:
+    cmds:
+      - task qa
+      - go test
+      - go install
