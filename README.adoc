@@ -3,7 +3,7 @@ Younes Ouadi <yo@usem.tech>
 :icons: font
 :sectnums:
 
-A tiny webapp that converts a string to a QR Code. It uses in the back Google's chart API.
+Commons package.
 
 == Developer's Guide
 
